@@ -1,0 +1,17 @@
+using System;
+
+namespace Ejercicio10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num, multiplicador;
+            Console.WriteLine("Elige de que numero quieres que sea la tabla de multiplicar");
+            num = Convert.ToInt32(Console.ReadLine());
+            for (multiplicador=0;multiplicador<=10;multiplicador++)
+            { Console.WriteLine("{0} x {1} = {2}", num, multiplicador, (num*multiplicador)); }
+            Console.ReadKey();
+        }
+    }
+}
