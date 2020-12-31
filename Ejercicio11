@@ -1,0 +1,26 @@
+using System;
+
+namespace Ejercicio11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] posicion = new int[10];
+            posicion[0] = 4;
+            posicion[1] = 5;
+            posicion[2] = 3;
+            posicion[3] = 8;
+            posicion[4] = 12;
+            posicion[5] = 7;
+            posicion[6] = 24;
+            posicion[7] = 14;
+            posicion[8] = 1;
+            posicion[9] = 7;
+            int suma = posicion[0] + posicion[1] + posicion[2] + posicion[3] + posicion[4] + posicion[5] + posicion[6] + posicion[7] + posicion[8] + posicion[9];
+
+            Console.WriteLine("La suma de las 10 posciones es " + suma);
+            Console.ReadKey();
+        }
+    }
+}
