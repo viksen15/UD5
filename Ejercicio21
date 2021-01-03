@@ -1,0 +1,42 @@
+using System;
+
+namespace Ejercicio21
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+
+            Console.WriteLine("Cuantos numeros quieres que se muestren?");
+            int numeros = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
+
+            int[] aleatorio = new int[numeros];
+            Random rnd = new Random();
+
+            for (i = 0; i < numeros; i++)
+            {
+                aleatorio[i] = rnd.Next(1, 301);
+                Console.WriteLine("Numero: " + aleatorio[i]);
+            }
+            Console.WriteLine("");
+
+            Console.WriteLine("Numero a buscar?");
+            int numbuscado = Convert.ToInt32(Console.ReadLine());
+
+            int[] buscado = new int[aleatorio.Length];
+            for (i = 0; i < numeros; i++)
+            {
+                numbuscado = aleatorio[i] - (aleatorio[i] / 10 * 10);
+                if (numbuscado == aleatorio[i])
+                {
+                    numbuscado = aleatorio[i];
+                }Console.WriteLine("Numero acabado en " + numbuscado + ": " + aleatorio[i]);
+
+            }
+            Console.ReadKey();
+        }
+    }
+
+}
