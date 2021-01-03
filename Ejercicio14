@@ -1,0 +1,43 @@
+using System;
+
+namespace Ejercicio14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+
+            Console.WriteLine("Cuantos numeros aleatorios quieres?");
+            int numeros = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
+            int[] aleatorio = new int[numeros];
+
+            for (int i = 0; i < numeros; i++)
+            {
+                aleatorio[i] = rnd.Next(1, 10);
+
+                Console.WriteLine(aleatorio[i]);
+            }
+            Console.WriteLine("");
+
+            Console.WriteLine("Escribe un numero a ver si existe aqui:");
+            int numbuscado = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(siexiste(aleatorio, numbuscado));
+
+
+            Console.ReadKey();
+
+        }
+        public static Boolean siexiste (int[]aleatorio, int numbuscado)
+        {
+            Boolean respuesta = false;
+            for (int i=0; i<aleatorio.Length;i++)
+            { if (aleatorio[i] == numbuscado)
+                { respuesta = true; }
+            }
+            return respuesta;
+        }
+    }
+}
