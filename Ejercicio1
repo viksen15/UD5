@@ -1,0 +1,62 @@
+using System;
+
+namespace Ejercicio1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Program objeto = new Program();
+            int menu;
+            Console.WriteLine("Selecciona una figura\n1)circulo\n2)triangulo\n3)cuadrado");
+            menu = Convert.ToInt32(Console.ReadLine());
+            switch (menu)
+            {
+                case 1:
+                    Console.WriteLine("Has seleccionado circulo");
+                    objeto.circulo();
+                    break;
+                case 2:
+                    Console.WriteLine("Has seleccionado triangulo");
+                    objeto.triangulo();
+                    break;
+                case 3:
+                    Console.WriteLine("Has seleccionado cuadrado");
+                    objeto.cuadrado();
+                    break;
+            }
+        }
+
+
+        public void circulo()
+        {
+            const double pi = Math.PI;
+            Console.WriteLine("Inserte el radio del circulo: ");
+            double radiocirculo = double.Parse(Console.ReadLine());
+            double areacirculo = pi * Math.Pow(radiocirculo, 2);
+            Console.WriteLine("El area del circulo es: " + areacirculo);
+            Console.ReadKey();
+        }
+
+        public void triangulo()
+        {
+            Console.WriteLine("Inserte la base del triangulo:");
+            double basetriangulo = double.Parse(Console.ReadLine());
+            Console.WriteLine("Inserte la altura del triangulo:");
+            double alturatriangulo = double.Parse(Console.ReadLine());
+            double areatriangulo = (basetriangulo * alturatriangulo) / 2;
+            Console.WriteLine("El area del triangulo es: " + areatriangulo);
+            Console.ReadKey();
+        }
+
+        public void cuadrado()
+        {
+            Console.WriteLine("Inserte el lado del cuadrado:");
+            double ladocuadrado = double.Parse(Console.ReadLine());
+            double areacuadrado = ladocuadrado * ladocuadrado;
+            Console.WriteLine("El area del cuadrado es: " + areacuadrado);
+            Console.ReadKey();
+        }
+
+    }
+}

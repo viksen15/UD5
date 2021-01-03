@@ -1,0 +1,40 @@
+using System;
+
+namespace Ejercicio7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escribe una cantidad en euros");
+            double cantidad = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("A que moneda lo quieres convertir?");
+            string moneda = Console.ReadLine();
+            conversor(cantidad, moneda);
+        }
+        public static void conversor (double cantidad, string moneda)
+        {
+            double resultado = 0;
+            Boolean correcto = true;
+
+            switch (moneda)
+            {
+                case "libras":
+                    resultado=cantidad*0.86;
+                    break;
+                case "dolares":
+                    resultado = cantidad * 1.29;
+                    break;
+                case "yenes":
+                    resultado = cantidad * 129.852;
+                    break;
+                default:
+                    Console.WriteLine("La moneda introducida no es correcta");
+                    correcto = false;
+                    break;
+            }
+            if (correcto) { Console.WriteLine(cantidad + " euros en " + moneda + " son " + resultado); }
+
+        }
+    }
+}

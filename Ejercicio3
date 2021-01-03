@@ -1,0 +1,43 @@
+using System;
+
+namespace Ejercicio3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Introduce un numero");
+            int numero = Convert.ToInt32(Console.ReadLine());
+            if (Esprimo(numero))
+            {
+                Console.WriteLine("El numero " + numero + " es primo");
+            }
+            else
+            {
+                Console.WriteLine("El numero " + numero + " no es primo");
+            }
+        }
+        public static Boolean Esprimo(int numero)
+        { if (numero <= 1)
+            {
+                return false;
+            }
+            int cont = 0;
+            for (int divisor = (int)Math.Sqrt(numero); divisor > 1; divisor--)
+            {
+                if (numero % divisor == 0)
+                {
+                    cont += 1;
+                }
+            }
+            if (cont >= 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+}

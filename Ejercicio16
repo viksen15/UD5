@@ -1,0 +1,37 @@
+using System;
+
+namespace Ejercicio16
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] NoCapicua = new int[5];
+            NoCapicua[0] = 4;
+            NoCapicua[1] = 7;
+            NoCapicua[2] = 8;
+            NoCapicua[3] = 3;
+            NoCapicua[4] = 2;
+            Console.WriteLine("No capicua");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(NoCapicua[i]); }
+            Console.WriteLine("");
+
+            int[] Capicua = new int[5];
+            Capicua[0] = 8;
+            Capicua[1] = 4;
+            Capicua[2] = 5;
+            Capicua[3] = 4;
+            Capicua[4] = 8;
+            int aux;
+            for (int i = 0; i < Capicua.Length; i++)
+            {
+                if (Capicua[0] == Capicua[4])
+                {
+                    Console.WriteLine("Es capicua " + Capicua[i]);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+using System;
+
+namespace Ejercicio20
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+
+            Console.WriteLine("Cuantos numeros quieres que se muestren?");
+            int numeros = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
+
+            Console.WriteLine("Array 1:");
+            Console.WriteLine("");
+
+            int[] array1 = new int[numeros];
+            Random rnd = new Random();
+
+            for (i = 0; i < numeros; i++)
+            {
+                array1[i] = rnd.Next(0, 1000);
+                Console.WriteLine("Numero " + i + ": " + array1[i]);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Array 2: ");
+            Console.WriteLine("");
+
+            int[] array2 = new int[numeros];
+            for (i =0; i<numeros; i++)
+            { array2[i] = array1[i];
+                Console.WriteLine("Numero " + i + ": " + array1[i]);
+
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Array 3: ");
+            Console.WriteLine("");
+
+            int[] array3 = new int[numeros];
+            Random rnd2 = new Random();
+            for (i = 0; i < numeros; i++)
+            {
+                array3[i] = rnd2.Next(0, 1000);
+                Console.WriteLine("Numero " + i + ": " + array3[i]);
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Array 4 (Multiplicacion Array1 y Array2): ");
+            Console.WriteLine("");
+
+            int[] array4 = new int[numeros];
+            for ( i = 0; i < numeros; i++)
+            {
+                array4[i] = array1[i] * array2[i];
+                Console.WriteLine("Posicion " + i + ": " + array4[i]);
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}

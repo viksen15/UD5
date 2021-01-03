@@ -1,0 +1,41 @@
+using System;
+
+namespace Ejercicio18
+{
+    class Program
+    {
+        public static int numeros;
+        public static int suma;
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Los numeros aleatorios estaran entre 1 y 9");
+
+            // numeros aleatorios
+            int[] aleatorio = aleatorios();
+            Console.WriteLine("");
+
+            // suma
+            for (int i = 0; i < numeros; i++)
+            {
+                suma = aleatorio[i] + suma;
+            }
+            Console.WriteLine("La suma total es de :" + suma);
+
+            Console.ReadKey();
+        }
+        private static int[] aleatorios()
+        {
+            Console.WriteLine("Cuantos numeros quieres que se muestren?");
+            numeros = int.Parse(Console.ReadLine());
+            int[] aleatorio = new int[numeros];
+            Random rnd = new Random();
+
+            for (int i = 0; i < numeros; i++)
+            {
+                aleatorio[i] = rnd.Next(1, 10);
+                Console.WriteLine("Numero " + i + " = " + aleatorio[i]);
+            }
+            return aleatorio;
+        }
+    }
+}

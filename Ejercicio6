@@ -1,0 +1,31 @@
+using System;
+
+namespace Ejercicio6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero = 0;
+            do
+            {
+                Console.WriteLine("Introduce un numero positivo");
+                numero = Int32.Parse(Console.ReadLine());
+            } while (numero < 0);
+            int numCifras = cuentaCifras(numero);
+            if (numCifras == 1)
+            {
+                Console.WriteLine("El numero " + numero + " tiene " + numCifras + " cifras");
+            }else { Console.WriteLine("El numero " + numero + " tiene " + numCifras + " cifras"); }
+        }
+        public static int cuentaCifras (int numero)
+        {
+            int contador = 0;
+            for (int i = numero; i > 0; i /= 10)
+            {
+                contador++;
+            }
+            return contador;
+        }
+    }
+}
