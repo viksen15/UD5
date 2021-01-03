@@ -1,0 +1,40 @@
+using System;
+
+namespace Ejercicio17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // rellenar
+            int[] relleno;
+            relleno = rellenar();
+            Console.WriteLine("");
+
+            // mostrar
+            int[] numeros = new int[10];
+            mostrar(relleno);
+
+            Console.ReadKey();
+        }
+        public static int[] rellenar()
+        {
+            int[] numeros = new int[10];
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Introduce un numero");
+                numeros[i] = int.Parse(Console.ReadLine());
+
+            } return numeros;
+        }
+
+        public static void mostrar(int[] numeros)
+        {
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("El indice " + i + " tiene el valor: " + numeros[i]);
+            }
+        }
+    }
+}
