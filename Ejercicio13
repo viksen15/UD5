@@ -6,15 +6,18 @@ namespace Ejercicio13
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Cuantos numeros aleatorios quieres?");
-            int numeros = Convert.ToInt32(Console.ReadLine());
-
             Random rnd = new Random();
-            int x;
-            for (int i = 1; i <= numeros; i++)
+
+            Console.WriteLine("Cuantos numeros aleatorios quieres?");
+            int numeros = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
+            int[] aleatorio = new int[numeros];
+
+            for (int i = 0; i < numeros; i++)
             {
-                x = rnd.Next(1, 10);
-                Console.WriteLine(x + "\t");
+                aleatorio[i] = rnd.Next(1, 10);
+
+                Console.WriteLine(aleatorio[i]);
             }
             Console.ReadKey();
 
