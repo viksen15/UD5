@@ -1,0 +1,58 @@
+using System;
+
+namespace Ejercicio19
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int cont = 0;
+            int i, j;
+
+            Console.WriteLine("Cuantos numeros quieres que se muestren?");
+            int numeros = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
+
+            int[] aleatorio = new int[numeros];
+            Random rnd = new Random();
+
+            for (i = 0; i < numeros; i++)
+            { aleatorio[i] = rnd.Next(0,10000);
+                Console.WriteLine("Numero: " + aleatorio[i]);
+            }
+            Console.WriteLine("");
+
+            Console.WriteLine("Numeros primos: ");
+
+            for (i=0;i<numeros;i++)
+            {
+                cont = 0;
+                for (j = 2; j <= aleatorio[i]; j++)
+                {
+                    if(aleatorio[i] % j == 0)
+                    {
+                        cont = cont + 1;
+                    }
+                }
+                if (cont < 2)
+                {
+                    if (aleatorio[i] != 1)
+                    {
+                        Console.WriteLine("El numero: " + aleatorio[i]);
+                    }
+                }
+            }
+            Console.WriteLine("");
+
+            int max =0, x=0;
+            while(x<numeros)
+            { if (aleatorio[x] > max)
+                    max = aleatorio[x];
+                x++;
+            }
+            Console.WriteLine("El numero mas grande es: " + max);
+
+            Console.ReadKey();
+        }
+        }
+    }
